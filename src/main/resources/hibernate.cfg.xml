@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- connection settings -->
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://app4you.ddns.net:3306/test_db</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.connection.password">Do4lov3U00!@#</property>
+  <!-- connection pool -->
+  <property name="hibernate.connection.pool_size">1</property>
+  <!-- sql dialect -->
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+  <!-- 2nd level cache -->
+  <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+  <property name="hibernate.cache.use_second_level_cache">true</property>
+  <property name="hibernate.cache.use_query_cache">true</property>
+  <property name="net.sf.ehcache.configurationResourceName">/myehcache.xml</property>
+  <!-- echo all executed sql to output -->
+  <property name="hibernate.show_sql">true</property>
+  <!-- drop and recreate the db schema on startup -->
+  <property name="hibernate.hbm2ddl.auto">update</property>
+  <!-- annotated entity class -->
+  <mapping class="com.guny.hibernate.model.Employee"/>
+  <mapping class="com.guny.hibernate.model.Address"/>
+ </session-factory>
+</hibernate-configuration>
